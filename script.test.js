@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from "./script";
+import { capitalize, reverseString, calculator, caesarCipher } from "./script";
 
 test('Capitalize first leter', () => {
   expect(capitalize("logan")).toBe("Logan")
@@ -22,4 +22,16 @@ test("Divide: 10 / 5", () => {
 
 test("Multiply: 10 * 5", () => {
     expect(calculator.multiply(10,5)).toBe(50)
+})
+
+test("Ceasar Cipher: 'xyz' -> 3", () => {
+    expect(caesarCipher("xyz", 3)).toBe("abc")
+})
+
+test("Ceasar Cipher: 'XYZ' -> 3", () => {
+    expect(caesarCipher("XYZ", 3)).toBe("ABC")
+})
+
+test("Ceasar Cipher: 'aBc' -> 3", () => {
+    expect(caesarCipher("aBc", -3)).toBe("xYz")
 })
